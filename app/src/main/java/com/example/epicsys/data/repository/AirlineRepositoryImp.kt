@@ -1,5 +1,6 @@
 package com.example.epicsys.data.repository
 
+import android.util.Log
 import com.example.epicsys.data.local.AirlineDao
 import com.example.epicsys.data.remote.AirlineApi
 import com.example.epicsys.domain.model.AirlineItem
@@ -11,6 +12,9 @@ class AirlineRepositoryImp @Inject constructor(
     private val airlineApi : AirlineApi,
     private val airlineDao : AirlineDao
 ):AirlineRepository {
+
+
+
     override suspend fun insertDbAirline(airline: AirlineItem) {
         airlineDao.upsert(airline)
     }
@@ -26,6 +30,7 @@ class AirlineRepositoryImp @Inject constructor(
     override suspend fun showAllApiAirlines(): Resource<List<AirlineItem>> {
         return try {
             val response = airlineApi.getAllAirlines()
+            Log.d("repo",response.body().toString())
 
             if (response.isSuccessful) {
                 response.body()?.let {

@@ -4,6 +4,7 @@ class Constants {
     companion object {
         const val BASE_URL = "https://www.kayak.com/"
         const val MEAL_DATABASE_NAME = "meal_db"
+        const val PAGE_SIZE = 10
 
     }
 }

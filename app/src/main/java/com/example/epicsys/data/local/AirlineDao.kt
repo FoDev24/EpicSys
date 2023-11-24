@@ -18,4 +18,5 @@ interface AirlineDao {
 
     @Query("SELECT * FROM airlinesInformation")
     suspend fun getAllAirlines():List<AirlineItem>
+
 }

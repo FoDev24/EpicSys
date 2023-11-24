@@ -1,8 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
+    <!-- Airline Photo -->
+    <ImageView
+        android:id="@+id/airlinePhoto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Airline Name -->
+    <TextView
+        android:id="@+id/airline_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/airlinePhoto"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/myfont"
+        android:text="Airline Name"
+        app:layout_constraintTop_toBottomOf="@id/airlinePhoto"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <!-- Contact by Phone -->
+    <TextView
+        android:id="@+id/airline_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/airline_name"
+        android:layout_centerHorizontal="true"
+        android:text="Contact by Phone: +1 (123) 456-7890"
+        app:layout_constraintTop_toBottomOf="@id/airline_name"
+        android:textColor="#666666"
+        android:fontFamily="@font/myfont"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <!-- Visit Site -->
+    <TextView
+        android:id="@+id/airline_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/airline_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Visit us: www.airline.com"
+        android:textColor="#666666"
+        android:fontFamily="@font/myfont"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/airline_phone" />
+
+    <!-- Floating Action Button for Favorite -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fav_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FD0000"
+        android:src="@drawable/ic_favorite2"
+        app:borderWidth="0dp"
+        app:layout_anchorGravity="bottom|end"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

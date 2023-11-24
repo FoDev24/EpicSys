@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id ("kotlin-parcelize")
 
 }
 
@@ -32,6 +33,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -93,7 +95,17 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
 
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    //Coil
+    implementation("io.coil-kt:coil:2.5.0")
+
     kapt ("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2")
+
+    //paging
+    implementation ("androidx.paging:paging-common:3.1.1")
+    implementation ("androidx.paging:paging-runtime:3.1.1")
 
 }
 kapt {
