@@ -98,14 +98,11 @@ dependencies {
     //glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
-    //Coil
-    implementation("io.coil-kt:coil:2.5.0")
 
     kapt ("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2")
 
-    //paging
-    implementation ("androidx.paging:paging-common:3.1.1")
-    implementation ("androidx.paging:paging-runtime:3.1.1")
+    //Circular image
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 }
 kapt {

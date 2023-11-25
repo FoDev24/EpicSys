@@ -7,6 +7,6 @@ interface AirlineRepository {
     suspend fun insertDbAirline(airline : AirlineItem)
     suspend fun deleteDbAirline(airline : AirlineItem)
     suspend fun showAllDbAirlines():List<AirlineItem>
-    suspend fun showAllApiAirlines():Resource<List<AirlineItem>>
+    suspend fun getAllAirlines():Resource<List<AirlineItem>>
 
 }

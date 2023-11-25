@@ -1,4 +1,4 @@
-package com.example.epicsys.presentation.viewmodel
+package com.example.epicsys.presentation.favorite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

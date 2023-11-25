@@ -27,7 +27,7 @@ class AirlineRepositoryImp @Inject constructor(
         return airlineDao.getAllAirlines()
     }
 
-    override suspend fun showAllApiAirlines(): Resource<List<AirlineItem>> {
+    override suspend fun getAllAirlines(): Resource<List<AirlineItem>> {
         return try {
             val response = airlineApi.getAllAirlines()
             Log.d("repo",response.body().toString())

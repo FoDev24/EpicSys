@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/_3sdp"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp">
+
+        <ImageView
+            android:id="@+id/fav_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo"
+            app:civ_border_color="@color/gray"
+            android:layout_marginLeft="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fav_airline_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fly Emirates"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fav_image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:fontFamily="@font/myfont"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/fav_airline_site"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.airlinesite.com"
+            app:layout_constraintTop_toBottomOf="@id/fav_airline_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fav_image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="@color/gray"/>
+
+        <TextView
+            android:id="@+id/fav_airline_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code : 45662"
+            app:layout_constraintTop_toBottomOf="@id/fav_airline_site"
+            app:layout_constraintStart_toEndOf="@id/fav_image"
+            android:textSize="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textColor="@color/gray"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

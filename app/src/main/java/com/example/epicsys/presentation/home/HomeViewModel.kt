@@ -1,4 +1,4 @@
-package com.example.epicsys.presentation.viewmodel
+package com.example.epicsys.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -27,7 +27,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch { _airlines.emit(Resource.Loading()) }
 
         viewModelScope.launch {
-            repository.showAllApiAirlines()?.let { _airlines.emit(it)}
+            repository.getAllAirlines()?.let { _airlines.emit(it)}
         }
     }
 

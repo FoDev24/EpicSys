@@ -1,4 +1,4 @@
-package com.example.epicsys.presentation.fragment
+package com.example.epicsys.presentation.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.epicsys.R
 import com.example.epicsys.databinding.FragmentFavortiesBinding
 import com.example.epicsys.presentation.adapter.AllAirlinesAdapter
-import com.example.epicsys.presentation.viewmodel.FavoriteViewModel
+import com.example.epicsys.presentation.adapter.FavAirlinesAdapter
 import com.example.epicsys.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -25,7 +25,7 @@ import kotlinx.coroutines.flow.collectLatest
 class FavoritesFragment : Fragment() {
     private lateinit var binding: FragmentFavortiesBinding
     private val viewModel by viewModels<FavoriteViewModel>()
-    private val favAdapter by lazy { AllAirlinesAdapter() }
+    private val favAdapter by lazy { FavAirlinesAdapter(viewModel) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,6 +42,7 @@ class FavoritesFragment : Fragment() {
         prepareRecyclerView()
         onItemClick()
         onItemSwipe()
+
 
 
         lifecycleScope.launchWhenStarted {
@@ -116,7 +117,7 @@ class FavoritesFragment : Fragment() {
 
     private fun prepareRecyclerView() {
         binding.rvFavorites.apply {
-            layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+            layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL, false)
             adapter = favAdapter
         }
     }

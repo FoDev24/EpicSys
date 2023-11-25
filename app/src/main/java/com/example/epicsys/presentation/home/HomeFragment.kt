@@ -1,4 +1,4 @@
-package com.example.epicsys.presentation.fragment
+package com.example.epicsys.presentation.home
 
 import android.os.Bundle
 import android.util.Log
@@ -10,19 +10,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.epicsys.R
 import com.example.epicsys.databinding.FragmentHomeBinding
 import com.example.epicsys.presentation.adapter.AllAirlinesAdapter
-import com.example.epicsys.presentation.viewmodel.HomeViewModel
-import com.example.epicsys.util.Constants.Companion.PAGE_SIZE
 import com.example.epicsys.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
-import kotlin.math.log
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -62,8 +58,8 @@ class HomeFragment : Fragment() {
                         hideProgressBar()
                         val airlines = it.data
                         Log.d("count",airlines?.count().toString())
-                        val subset = airlines?.take(10)
-                        allAirlinesAdapter.differ.submitList(airlines)
+                        val subset = airlines?.take(60)
+                        allAirlinesAdapter.differ.submitList(subset)
                     }
                     is Resource.Error -> {
                         hideProgressBar()
@@ -86,8 +82,7 @@ class HomeFragment : Fragment() {
 
     private fun setupAllAirlinesRv() {
         binding.allAirlinesRv.apply {
-            layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            layoutManager =GridLayoutManager(context,3,GridLayoutManager.VERTICAL,false)
             adapter = allAirlinesAdapter
         }
     }

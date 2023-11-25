@@ -1,4 +1,4 @@
-package com.example.epicsys.presentation.fragment
+package com.example.epicsys.presentation.home
 
 import android.content.Intent
 import android.net.Uri
@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.example.epicsys.R
 import com.example.epicsys.databinding.FragmentDetailsBinding
 import com.example.epicsys.domain.model.AirlineItem
-import com.example.epicsys.presentation.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

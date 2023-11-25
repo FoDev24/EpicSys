@@ -1,4 +1,4 @@
-package com.example.epicsys.presentation.di
+package com.example.epicsys.di
 
 import android.content.Context
 import androidx.room.Room
