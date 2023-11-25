@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-### Download link : https://www.mediafire.com/file/q86x4b1zf2yjz24/epicSys.rar/file
+### Download APK : https://www.mediafire.com/file/q86x4b1zf2yjz24/epicSys.rar/file
 
 ### First Screen (HomeFragment):
 
