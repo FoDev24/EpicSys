@@ -19,9 +19,12 @@ class HomeViewModel @Inject constructor(
     private val _airlines = MutableStateFlow<Resource<List<AirlineItem>>>(Resource.Unspecified())
     val airlines = _airlines.asStateFlow()
 
+
     init {
         getAllAirlines()
     }
+
+
 
     private fun getAllAirlines() {
         viewModelScope.launch { _airlines.emit(Resource.Loading()) }
@@ -36,4 +39,6 @@ class HomeViewModel @Inject constructor(
             repository.insertDbAirline(airline)
         }
     }
+
+
 }

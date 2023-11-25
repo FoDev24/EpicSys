@@ -27,6 +27,8 @@ class AirlineRepositoryImp @Inject constructor(
         return airlineDao.getAllAirlines()
     }
 
+
+
     override suspend fun getAllAirlines(): Resource<List<AirlineItem>> {
         return try {
             val response = airlineApi.getAllAirlines()
@@ -43,4 +45,6 @@ class AirlineRepositoryImp @Inject constructor(
             Resource.Error("Couldn't reach the server.Check internet connection", null)
         }
     }
+
+
 }

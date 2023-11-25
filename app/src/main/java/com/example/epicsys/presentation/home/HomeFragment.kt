@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.epicsys.R
 import com.example.epicsys.databinding.FragmentHomeBinding
 import com.example.epicsys.presentation.adapter.AllAirlinesAdapter
@@ -25,6 +26,8 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel by viewModels<HomeViewModel>()
     private val allAirlinesAdapter by lazy { AllAirlinesAdapter() }
+
+
 
 
     override fun onCreateView(
@@ -48,6 +51,8 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_detailsFragment, b)
         }
 
+
+
         lifecycleScope.launch {
             viewModel.airlines.collectLatest {
                 when (it) {
@@ -58,7 +63,7 @@ class HomeFragment : Fragment() {
                         hideProgressBar()
                         val airlines = it.data
                         Log.d("count",airlines?.count().toString())
-                        val subset = airlines?.take(60)
+                            val subset = airlines?.take(50)
                         allAirlinesAdapter.differ.submitList(subset)
                     }
                     is Resource.Error -> {

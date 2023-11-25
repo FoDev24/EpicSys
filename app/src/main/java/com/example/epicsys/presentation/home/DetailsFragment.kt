@@ -3,6 +3,8 @@ package com.example.epicsys.presentation.home
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +36,7 @@ class DetailsFragment : Fragment() {
 
         val airline = arguments?.getParcelable<AirlineItem>("airline")
 
+
         binding.apply {
             Glide.with(requireContext())
                 .load(R.drawable.logo)
@@ -41,7 +44,7 @@ class DetailsFragment : Fragment() {
 
             airlineName.text = airline?.name
             airlinePhone.text =
-                if (airline!!.phone.isEmpty()) "Contact by phone : Not available" else "Contact by phone: ${airline?.phone}"
+                if (airline!!.phone.isEmpty()) "+41 31 960 22 33" else " ${airline?.phone}"
             airlineSite.text = "Visit us: ${airline?.site}"
 
             // Saving airline into the db
@@ -61,6 +64,10 @@ class DetailsFragment : Fragment() {
                 if (airline!!.phone.isNotEmpty()) {
                     val dialIntent = Intent(Intent.ACTION_DIAL)
                     dialIntent.data = Uri.parse("tel:${airline?.phone}")
+                    startActivity(dialIntent)
+                }else {
+                    val dialIntent = Intent(Intent.ACTION_DIAL)
+                    dialIntent.data = Uri.parse("tel:${"+41 31 960 22 33"}")
                     startActivity(dialIntent)
                 }
             }

@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="@dimen/_10ssp"
-        android:text="Category name"
+        android:text="Airline name"
         android:maxLines="1"
         android:textColor="@color/black"
         android:fontFamily="@font/myfont"
